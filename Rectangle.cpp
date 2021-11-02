@@ -20,7 +20,7 @@ class Rectangle{
 		double circuit();
 };
 	Rectangle::Rectangle(){
-		cout << "Konstruktor domyœlny" << endl;
+		cout << "Konstruktor domyÅ›lny" << endl;
 	}
 	
 	Rectangle::Rectangle(double psideA, double psideB){
@@ -30,7 +30,7 @@ class Rectangle{
 	}
 	
 	Rectangle::Rectangle(const Rectangle& model){
-		cout << "Konstruktor kopiuj¹cy" << endl;
+		cout << "Konstruktor kopiujÄ…cy" << endl;
 		sideA = model.sideA;
 		sideB = model.sideB;
 	}
@@ -57,27 +57,37 @@ class Rectangle{
 		cout<< "Bok a: " << sideA << "\nBok b: " << sideB << endl;
 	}
 
+	Rectangle copyRectangle(Rectangle rectangle){
+		return rectangle;
+	}
 
 int main(){
 	setlocale(LC_CTYPE, "polish");
 	
 	double a, b;
 	
-	cout << "Prostok¹t 1:" << endl;
+	cout << "ProstokÄ…t 1:" << endl;
 	Rectangle prostokat1(2, 4);
 	prostokat1.getSides();
-	cout << "a: " << a << "\nb: " << b << endl << endl;
+	cout << "a: " << a << "\nb: " << b << endl << endl << endl;
 	
-	cout << "Prostok¹t 2:" << endl;
+	cout << "ProstokÄ…t 2:" << endl;
 	Rectangle prostokat2 = prostokat1;
 	prostokat2.catchSides(a, b);
 	prostokat2.getSides();
 	cout << "a: " << a << "\nb: " << b << endl << endl << endl;
 	
-	/*cout << "Prostok¹t 3:" << endl;
-	Rectangle prostokat3 = prostokat1;
+	cout << "ProstokÄ…t 3:" << endl;
+	Rectangle prostokat3(prostokat1);
+	prostokat3.catchSides(a, b);
 	prostokat3.getSides();
-	cout << "a: " << a << "\nb: " << b << endl << endl << endl;*/
+	cout << "a: " << a << "\nb: " << b << endl << endl << endl;
+	
+	cout << "ProstokÄ…t 4: " << endl;
+	Rectangle prostokat4 = copyRectangle(prostokat1);
+	prostokat4.catchSides(a, b);
+	//prostokat4.getSides();
+	cout << "a: " << a << "\nb: " << b << endl << endl << endl;
 	
 	return 0;
 }
