@@ -1,4 +1,4 @@
- #include<iostream>
+#include<iostream>
  using namespace std;
  
  class Animal{
@@ -18,18 +18,18 @@
  class Fish : public Animal{
  	public:
  		virtual void Breathe(){
- 			cout << "Oddych skrzelami!!!" << endl;	
+ 			cout << "Oddycha skrzelami!!!" << endl;	
 		}
 		
 		virtual void Swim(){
-			cout << "Rybcia p³ynie!!!" << endl;
+			cout << "Rybcia pÅ‚ynie!!!" << endl;
 		}
  };
  
   class Mammal : public Animal{
  	public:
  		virtual void Breathe(){
- 			cout << "Oddych p³ucami!!!" << endl;	
+ 			cout << "Oddych pÅ‚ucami!!!" << endl;	
 		}
 		
 		virtual void Run(){
@@ -40,11 +40,11 @@
   class Bird : public Animal{
  	public:
  		virtual void Breathe(){
- 			cout << "Oddycha p³ucami!!!" << endl;	
+ 			cout << "Oddycha pÅ‚ucami!!!" << endl;	
 		}
 		
 		virtual void Fly(){
-			cout << "Leæ!!!" << endl;
+			cout << "LeÄ‡!!!" << endl;
 		}
  };
  
@@ -52,7 +52,9 @@
  int main(){
 	setlocale(LC_CTYPE, "polish");
 	
-	
+	Fish zwierze;
+	Animal *wsk = &zwierze;
+	wsk -> Breathe();
 	
 	
  	return 0;
